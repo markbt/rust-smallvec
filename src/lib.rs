@@ -180,7 +180,6 @@ use core::mem::ManuallyDrop;
 /// example, `smallvec![Rc::new(1); 5]` will create a vector of five references
 /// to the same boxed integer value, not five references pointing to independently
 /// boxed integers.
-
 #[macro_export]
 macro_rules! smallvec {
     // count helper: transform any expression into 1
@@ -1536,7 +1535,7 @@ impl<A: Array> SmallVec<A> {
     /// Retains only the elements specified by the predicate.
     ///
     /// This method is identical in behaviour to [`retain`]; it is included only
-    /// to maintain api-compatability with `std::Vec`, where the methods are
+    /// to maintain api-compatibility with `std::Vec`, where the methods are
     /// separate for historical reasons.
     pub fn retain_mut<F: FnMut(&mut A::Item) -> bool>(&mut self, f: F) {
         self.retain(f)
